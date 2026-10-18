@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "dataset_dir": "data\\demo_quality_dataset",
+    "total_valid_records": 30,
+    "total_errors": 0,
+    "quality_label": {
+      "good": 15,
+      "bad": 15
+    },
+    "class_name": {
+      "inn": 10,
+      "passport": 10,
+      "snils": 10
+    },
+    "split": {
+      "train": 26,
+      "test": 2,
+      "validation": 2
+    },
+    "defect_type_bad": {
+      "blur": 3,
+      "glare": 3,
+      "skew": 3,
+      "occlusion": 3,
+      "exposure": 3
+    },
+    "good_augmentation": {
+      "rotate_270": 4,
+      "rotate_90": 3,
+      "none": 5,
+      "slight_rotation": 3
+    },
+    "duplicate_image_ids": [],
+    "duplicate_image_paths": [],
+    "source_id_leakage": {},
+    "orphan_files": [],
+    "warnings": []
+  },
+  "errors": []
+}

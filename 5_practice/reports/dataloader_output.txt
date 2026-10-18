@@ -1,0 +1,24 @@
+Dataset directory: data\quality_dataset
+Batch size: 16
+
+Number of samples:
+  train       1314  (good=657, bad=657)
+  validation   222  (good=111, bad=111)
+  test         264  (good=132, bad=132)
+  total       1800
+
+[train] batch loaded successfully.
+  Images tensor shape: torch.Size([16, 3, 224, 224])
+  Labels tensor shape: torch.Size([16])
+  Labels: [0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1]
+  Label names: ['good', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good', 'good', 'bad', 'bad', 'bad', 'bad', 'bad', 'good', 'bad']
+[validation] batch loaded successfully.
+  Images tensor shape: torch.Size([16, 3, 224, 224])
+  Labels tensor shape: torch.Size([16])
+  Labels: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+  Label names: ['good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad']
+[test] batch loaded successfully.
+  Images tensor shape: torch.Size([16, 3, 224, 224])
+  Labels tensor shape: torch.Size([16])
+  Labels: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+  Label names: ['good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad', 'good', 'bad']

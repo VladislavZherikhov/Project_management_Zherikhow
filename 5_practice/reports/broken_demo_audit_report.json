@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "dataset_dir": "broken copy of data/demo_quality_dataset (temporary, deleted after the test)",
+    "total_valid_records": 24,
+    "total_errors": 6,
+    "quality_label": {
+      "bad": 12,
+      "good": 12
+    },
+    "class_name": {
+      "inn": 4,
+      "passport": 10,
+      "snils": 10
+    },
+    "split": {
+      "train": 20,
+      "test": 2,
+      "validation": 2
+    },
+    "defect_type_bad": {
+      "skew": 3,
+      "exposure": 3,
+      "blur": 2,
+      "glare": 2,
+      "occlusion": 2
+    },
+    "good_augmentation": {
+      "none": 4,
+      "slight_rotation": 3,
+      "rotate_270": 3,
+      "rotate_90": 2
+    },
+    "duplicate_image_ids": [
+      "bad_inn_skew_003_v1"
+    ],
+    "duplicate_image_paths": [],
+    "source_id_leakage": {
+      "inn_00003": [
+        "test",
+        "train"
+      ]
+    },
+    "orphan_files": [
+      "bad/bad_inn_occlusion_004_v1.jpg",
+      "good/orphan.jpg"
+    ],
+    "warnings": [
+      "Document class imbalance detected: {'inn': 4, 'passport': 10, 'snils': 10}.",
+      "Duplicate image_id values found.",
+      "2 image file(s) have no metadata record.",
+      "Data leakage detected: same source_id appears in multiple splits."
+    ]
+  },
+  "errors": [
+    {
+      "line": 1,
+      "image_id": "good_inn_001_v1",
+      "error": "Cannot open image: image file is truncated (27 bytes not processed)"
+    },
+    {
+      "line": 2,
+      "image_id": "bad_inn_blur_001_v1",
+      "error": "Image file not found: C:\\Users\\Vlad\\AppData\\Local\\Temp\\claude\\c--Users-Vlad-Desktop--------3-----\\dd431e15-efc2-4440-b83e-4ff588adf5b7\\scratchpad\\broken_demo\\bad\\bad_inn_blur_001_v1.jpg"
+    },
+    {
+      "line": 3,
+      "image_id": "good_inn_002_v1",
+      "error": "Wrong image size: (500, 500). Expected (640, 640)."
+    },
+    {
+      "line": 4,
+      "image_id": "bad_inn_glare_002_v1",
+      "error": "Invalid quality_label: medium"
+    },
+    {
+      "line": 5,
+      "image_id": "good_inn_003_v1",
+      "error": "Invalid split: training"
+    },
+    {
+      "line": 8,
+      "image_id": "bad_inn_occlusion_004_v1",
+      "error": "Missing fields: ['source_id']"
+    }
+  ]
+}

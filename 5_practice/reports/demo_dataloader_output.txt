@@ -1,0 +1,12 @@
+Dataset directory: data\demo_quality_dataset
+Batch size: 4
+
+Number of samples:
+  all           30  (good=15, bad=15)
+  total         30
+
+[all] batch loaded successfully.
+  Images tensor shape: torch.Size([4, 3, 224, 224])
+  Labels tensor shape: torch.Size([4])
+  Labels: [0, 1, 1, 0]
+  Label names: ['good', 'bad', 'bad', 'good']

@@ -1,0 +1,47 @@
+{
+  "input_counts": {
+    "inn": 100,
+    "passport": 100,
+    "snils": 100
+  },
+  "target_per_class": 5,
+  "variants_per_source": 1,
+  "total_records": 30,
+  "quality_label": {
+    "good": 15,
+    "bad": 15
+  },
+  "class_all": {
+    "inn": 10,
+    "passport": 10,
+    "snils": 10
+  },
+  "class_good": {
+    "inn": 5,
+    "passport": 5,
+    "snils": 5
+  },
+  "class_bad": {
+    "inn": 5,
+    "passport": 5,
+    "snils": 5
+  },
+  "defect_type_bad": {
+    "blur": 3,
+    "glare": 3,
+    "skew": 3,
+    "occlusion": 3,
+    "exposure": 3
+  },
+  "good_augmentation": {
+    "rotate_270": 4,
+    "rotate_90": 3,
+    "none": 5,
+    "slight_rotation": 3
+  },
+  "split": {
+    "train": 26,
+    "test": 2,
+    "validation": 2
+  }
+}
