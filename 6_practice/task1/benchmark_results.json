@@ -1,0 +1,38 @@
+{
+  "device": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel",
+  "torch": "2.14.1+cpu",
+  "threads": 6,
+  "protocol": "batch 1, 224x224, 10 warm-up, mean of 100 runs",
+  "models": {
+    "mobilenet_v2": {
+      "params_m": 2.23,
+      "size_mb_fp32": 8.7,
+      "cpu_latency_ms_mean": 19.2,
+      "cpu_latency_ms_std": 1.7
+    },
+    "efficientnet_b0": {
+      "params_m": 4.01,
+      "size_mb_fp32": 15.6,
+      "cpu_latency_ms_mean": 28.2,
+      "cpu_latency_ms_std": 5.4
+    },
+    "resnet50": {
+      "params_m": 23.51,
+      "size_mb_fp32": 90.0,
+      "cpu_latency_ms_mean": 69.5,
+      "cpu_latency_ms_std": 3.9
+    },
+    "yolov8n_cls": {
+      "params_m": 1.44,
+      "size_mb_fp32": 5.6,
+      "cpu_latency_ms_mean": 9.7,
+      "cpu_latency_ms_std": 1.1
+    },
+    "yolov8s_cls": {
+      "params_m": 5.08,
+      "size_mb_fp32": 19.5,
+      "cpu_latency_ms_mean": 19.0,
+      "cpu_latency_ms_std": 1.9
+    }
+  }
+}
