@@ -166,9 +166,9 @@ All quality metrics are computed **once, on the test split only**, with **bad as
 ## 8. Final decision for comparison 
 
 For the **first experiment**, the **MobileNetV3-Small**, **EfficientNet-B0**, and **YOLOv8n-cls** models will be officially selected. The primary objective of this initial phase is to thoroughly evaluate and compare their **speed metrics** (latency and throughput), **computational complexity** (parameter count and FLOPs), and **accuracy parameters** on the specific dataset. Based on the quantitative results of this benchmark, **one final model** that demonstrates the optimal balance of efficiency and predictive performance will be selected for deployment.
-| Model | Primary Evaluation Focus | Key Metrics to Compare | Selection Criterion |
+| Model | Primary Evaluation Focus |
 | :--- | :--- | :--- | :--- |
-| **MobileNetV3-Small** | Ultra-low resource consumption and high CPU performance. | • Inference Speed (Latency / FPS)<br>• Model Size (MB)<br>• Parameter Count (Params)<br>• Accuracy / F1-Score | **Downselection to a single best model** based on the highest performance-to-speed ratio on the target dataset. |
+| **MobileNetV3-Small** | Ultra-low resource consumption and high CPU performance. | 
 | **EfficientNet-B0** | High-efficiency scaling and advanced feature extraction balance. |
 | **YOLOv8n-cls** | Real-time classification speeds and seamless pipeline integration. |
 
