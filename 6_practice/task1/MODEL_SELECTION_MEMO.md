@@ -64,6 +64,8 @@ Columns **A** come from the official sources (ImageNet-1k, 1000-class head). Col
 | Model | Input | A: Params (M) | A: GFLOPs | A: ImageNet top-1 | A: Weights file | B: Params, binary head (M) | B: Size fp32 (MB) | B: CPU latency (ms) |
 |---|---|---|---|---|---|---|---|---|
 | MobileNetV2 [1][5] | 224 | 3.5 | 0.30 | 71.9 % | 13.6 MB | 2.23 | 8.7 | **20.3 ± 2.0** |
+| MobileNetV3-Large | 224 | 5.4 | 0.22 | 74.0 % | 21.4 MB | 4.10 | 16.4 | **15.2 ± 1.5** |
+| MobileNetV3-Small | 224 | 2.5 | 0.06 | 67.4 % | 10.1 MB | 1.25 | 5.0 | **7.4 ± 0.8** |
 | EfficientNet-B0 [3][5] | 224 | 5.3 | 0.39 | 77.7 % | 20.5 MB | 4.01 | 15.6 | 29.8 ± 3.3 |
 | ResNet-50 [2][5] | 224 | 25.6 | 4.09 | 76.1 % | 97.8 MB | 23.51 | 90.0 | 71.0 ± 5.1 |
 | YOLOv8n-cls [4] | 224 | 2.7 | 4.3* | 69.0 % | ~5.5 MB | 1.44 | 5.6 | **9.7 ± 1.1** |
@@ -161,7 +163,17 @@ All quality metrics are computed **once, on the test split only**, with **bad as
 | Weak glare/exposure on the white INN form makes some BAD labels actually readable (label noise) | Error analysis in Task 3; adjust defect strength |
 | Overfitting during full fine-tuning | Frozen-base baseline first, low LR, early stopping on validation |
 
-## 8. Sources
+## 8. Final decision for comparison 
+
+For the **first experiment**, the **MobileNetV3-Small**, **EfficientNet-B0**, and **YOLOv8n-cls** models will be officially selected. The primary objective of this initial phase is to thoroughly evaluate and compare their **speed metrics** (latency and throughput), **computational complexity** (parameter count and FLOPs), and **accuracy parameters** on the specific dataset. Based on the quantitative results of this benchmark, **one final model** that demonstrates the optimal balance of efficiency and predictive performance will be selected for deployment.
+| Model | Primary Evaluation Focus | Key Metrics to Compare | Selection Criterion |
+| :--- | :--- | :--- | :--- |
+| **MobileNetV3-Small** | Ultra-low resource consumption and high CPU performance. | • Inference Speed (Latency / FPS)<br>• Model Size (MB)<br>• Parameter Count (Params)<br>• Accuracy / F1-Score | **Downselection to a single best model** based on the highest performance-to-speed ratio on the target dataset. |
+| **EfficientNet-B0** | High-efficiency scaling and advanced feature extraction balance. |
+| **YOLOv8n-cls** | Real-time classification speeds and seamless pipeline integration. |
+
+
+## 9. Sources
 
 1. M. Sandler, A. Howard, M. Zhu, A. Zhmoginov, L.-C. Chen. *MobileNetV2: Inverted Residuals and Linear Bottlenecks.* CVPR 2018. arXiv:1801.04381.
 2. K. He, X. Zhang, S. Ren, J. Sun. *Deep Residual Learning for Image Recognition.* CVPR 2016. arXiv:1512.03385.
