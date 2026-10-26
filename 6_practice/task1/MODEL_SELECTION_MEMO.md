@@ -166,12 +166,11 @@ All quality metrics are computed **once, on the test split only**, with **bad as
 ## 8. Final decision for comparison 
 
 For the **first experiment**, the **MobileNetV3-Small**, **EfficientNet-B0**, and **YOLOv8n-cls** models will be officially selected. The primary objective of this initial phase is to thoroughly evaluate and compare their **speed metrics** (latency and throughput), **computational complexity** (parameter count and FLOPs), and **accuracy parameters** on the specific dataset. Based on the quantitative results of this benchmark, **one final model** that demonstrates the optimal balance of efficiency and predictive performance will be selected for deployment.
-| Model | Primary Evaluation Focus |
-| :--- | :--- | :--- | :--- |
-| **MobileNetV3-Small** | Ultra-low resource consumption and high CPU performance. | 
-| **EfficientNet-B0** | High-efficiency scaling and advanced feature extraction balance. |
-| **YOLOv8n-cls** | Real-time classification speeds and seamless pipeline integration. |
-
+| Model | Primary Focus | Speed & Efficiency Metrics | Accuracy & Quality Metrics | Selection Criterion |
+| :--- | :--- | :--- | :--- | :--- |
+| **MobileNetV3-Small** | Ultra-low resource usage and high-speed CPU inference. | • Latency (ms)<br>• Throughput (FPS)<br>• Model Size (MB) | • Top-1 / Top-5 Accuracy<br>• Precision<br>• Recall / F1-Score | **One best model** will be selected based on the highest performance-to-speed ratio after testing on the validation dataset. |
+| **EfficientNet-B0** | Optimal balance between feature extraction capability and parameters. | • Parameter Count (M)<br>• FLOPs (B)<br>• Inference Time (ms) | • Top-1 / Top-5 Accuracy<br>• Precision<br>• Recall / F1-Score |
+| **YOLOv8n-cls** | Native real-time classification within the YOLO ecosystem. | • Latency (ms)<br>• Throughput (FPS)<br>• Export Flexibility (ONNX/TensorRT) | • Top-1 / Top-5 Accuracy<br>• Precision<br>• Recall / F1-Score |
 
 ## 9. Sources
 
