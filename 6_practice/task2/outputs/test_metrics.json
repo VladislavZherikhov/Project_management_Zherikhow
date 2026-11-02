@@ -1,0 +1,143 @@
+{
+  "hyperparameters": {
+    "seed": 24500003,
+    "image_size": 224,
+    "normalization": "ImageNet mean/std",
+    "batch_size": 32,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "max_epochs": 30,
+    "early_stopping": "val_loss, patience 5, best weights restored",
+    "head": "GAP -> Linear(C,128) -> ReLU -> Dropout(0.3) -> Linear(128,1) -> sigmoid",
+    "dropout": 0.3,
+    "hidden_units": 128,
+    "loss": "BCEWithLogitsLoss",
+    "train_augmentation": "random 0/90/180/270 rotation, both classes",
+    "backbone": "ImageNet pretrained, frozen (BatchNorm in eval mode)",
+    "threshold": 0.5
+  },
+  "results": {
+    "mobilenet_v3_small": {
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9777777777777777,
+        "precision_bad": 0.9923664122137404,
+        "recall_bad": 0.9629629629629629,
+        "f1_bad": 0.9774436090225563,
+        "precision_good": 0.9640287769784173,
+        "recall_good": 0.9925925925925926,
+        "f1_macro": 0.9777728994017891,
+        "confusion_matrix": [
+          [
+            134,
+            1
+          ],
+          [
+            5,
+            130
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 0.9286,
+          "glare": 1.0,
+          "occlusion": 0.88,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 0.9286,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9889,
+          "passport": 0.9556,
+          "snils": 0.9889
+        }
+      },
+      "cpu_latency_ms": [
+        8.9,
+        1.1
+      ],
+      "size_mb": 3.9,
+      "params_total": 1000993,
+      "params_trainable": 73985,
+      "train_time_s": 202.9,
+      "best_epoch": 26,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      }
+    },
+    "mobilenet_v2": {
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9851851851851852,
+        "precision_bad": 0.9851851851851852,
+        "recall_bad": 0.9851851851851852,
+        "f1_bad": 0.9851851851851852,
+        "precision_good": 0.9851851851851852,
+        "recall_good": 0.9851851851851852,
+        "f1_macro": 0.9851851851851852,
+        "confusion_matrix": [
+          [
+            133,
+            2
+          ],
+          [
+            2,
+            133
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 1.0,
+          "glare": 0.963,
+          "occlusion": 0.96,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 0.9512,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9778,
+          "passport": 0.9778,
+          "snils": 1.0
+        }
+      },
+      "cpu_latency_ms": [
+        17.6,
+        1.4
+      ],
+      "size_mb": 9.3,
+      "params_total": 2387969,
+      "params_trainable": 164097,
+      "train_time_s": 983.0,
+      "best_epoch": 23,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      }
+    }
+  }
+}
