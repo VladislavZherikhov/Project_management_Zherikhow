@@ -1,0 +1,12 @@
+image_id,true,class,defect/augmentation,models_wrong,wrong_models
+bad_inn_occlusion_289_v1,bad,inn,occlusion,3,"MobileNetV3-Small, MobileNetV2, EfficientNet-B0"
+bad_passport_exposure_165_v3,bad,passport,exposure,2,"MobileNetV3-Small, MobileNetV3-Small FT (bonus)"
+bad_inn_glare_192_v3,bad,inn,glare,1,MobileNetV2
+bad_inn_glare_227_v2,bad,inn,glare,1,EfficientNet-B0
+bad_inn_exposure_265_v1,bad,inn,exposure,1,YOLOv8n-cls
+good_passport_063_v3,good,passport,rotate_270,1,MobileNetV3-Small
+good_passport_110_v2,good,passport,slight_rotation_3.4,1,MobileNetV2
+bad_passport_exposure_110_v2,bad,passport,exposure,1,MobileNetV3-Small
+bad_passport_occlusion_159_v3,bad,passport,occlusion,1,MobileNetV3-Small
+good_passport_163_v1,good,passport,slight_rotation_-5.7,1,MobileNetV2
+bad_snils_occlusion_139_v1,bad,snils,occlusion,1,MobileNetV3-Small

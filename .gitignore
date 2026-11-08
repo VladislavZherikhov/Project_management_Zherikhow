@@ -1,2 +1,7 @@
 ﻿__pycache__/
 *.pyc
+
+# Practice 6, Task 3: rebuilt by build_yolo_dataset.py / downloaded by Ultralytics
+6_practice/task3/yolo_dataset/
+6_practice/task3/*.pt
+6_practice/task3/runs/*/weights/last.pt

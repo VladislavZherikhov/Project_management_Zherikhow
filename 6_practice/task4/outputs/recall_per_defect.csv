@@ -1,0 +1,7 @@
+,blur,exposure,glare,occlusion,skew,mean
+MobileNetV3-Small,1.0,0.9286,1.0,0.88,1.0,0.96172
+MobileNetV2,1.0,1.0,0.963,0.96,1.0,0.9846
+YOLOv8n-cls,1.0,0.9643,1.0,1.0,1.0,0.99286
+YOLOv8s-cls,1.0,1.0,1.0,1.0,1.0,1.0
+EfficientNet-B0,1.0,1.0,0.963,0.96,1.0,0.9846
+MobileNetV3-Small FT (bonus),1.0,0.9643,1.0,1.0,1.0,0.99286

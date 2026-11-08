@@ -1,3 +1,7 @@
 date,task,model,regime,seed,image_size,batch_size,optimizer,lr,epochs_run,best_epoch,train_time_s,test_accuracy,test_precision_bad,test_recall_bad,test_f1_bad,cpu_latency_ms,size_mb
 2026-11-02 15:24,task2,mobilenet_v3_small,frozen base,24500003,224,32,Adam,0.001,30,26,202.9,0.9778,0.9924,0.963,0.9774,8.9,3.9
 2026-11-02 15:24,task2,mobilenet_v2,frozen base,24500003,224,32,Adam,0.001,28,23,983.0,0.9852,0.9852,0.9852,0.9852,17.6,9.3
+2026-11-08 20:40,task3,yolov8n_cls,full fine-tuning,24500003,224,32,AdamW,0.001,11,3,346.4,0.9963,1.0,0.9926,0.9963,10.1,5.6
+2026-11-08 20:40,task3,yolov8s_cls,full fine-tuning,24500003,224,32,AdamW,0.001,15,7,1033.5,1.0,1.0,1.0,1.0,17.7,19.5
+2026-11-08 20:55,task4,efficientnet_b0,frozen base,24500003,224,32,Adam,0.001,17,12,626.6,0.9926,1.0,0.9852,0.9925,31.0,16.2
+2026-11-08 20:55,task4,mobilenet_v3_small_ft,fine-tune last 3 blocks,24500003,224,32,Adam,0.0001,15,14,148.3,0.9963,1.0,0.9926,0.9963,10.7,3.9

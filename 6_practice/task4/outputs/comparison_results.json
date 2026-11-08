@@ -1,0 +1,415 @@
+{
+  "hyperparameters": {
+    "frozen": {
+      "seed": 24500003,
+      "image_size": 224,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "max_epochs": 30,
+      "patience": 5,
+      "hidden_units": 128,
+      "dropout": 0.3,
+      "threshold": 0.5
+    },
+    "finetune": {
+      "seed": 24500003,
+      "image_size": 224,
+      "batch_size": 32,
+      "learning_rate": 0.0001,
+      "max_epochs": 15,
+      "patience": 5,
+      "hidden_units": 128,
+      "dropout": 0.3,
+      "threshold": 0.5,
+      "trainable_blocks": 3
+    }
+  },
+  "results": {
+    "mobilenet_v3_small": {
+      "display": "MobileNetV3-Small",
+      "regime": "frozen",
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9777777777777777,
+        "precision_bad": 0.9923664122137404,
+        "recall_bad": 0.9629629629629629,
+        "f1_bad": 0.9774436090225563,
+        "precision_good": 0.9640287769784173,
+        "recall_good": 0.9925925925925926,
+        "f1_macro": 0.9777728994017891,
+        "confusion_matrix": [
+          [
+            134,
+            1
+          ],
+          [
+            5,
+            130
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 0.9286,
+          "glare": 1.0,
+          "occlusion": 0.88,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 0.9286,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9889,
+          "passport": 0.9556,
+          "snils": 0.9889
+        }
+      },
+      "cpu_latency_ms": [
+        10.4,
+        0.9
+      ],
+      "size_mb_fp32": 3.9,
+      "params_total": 1000993,
+      "train_time_s": 202.9,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      },
+      "passes_all": true
+    },
+    "mobilenet_v2": {
+      "display": "MobileNetV2",
+      "regime": "frozen",
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9851851851851852,
+        "precision_bad": 0.9851851851851852,
+        "recall_bad": 0.9851851851851852,
+        "f1_bad": 0.9851851851851852,
+        "precision_good": 0.9851851851851852,
+        "recall_good": 0.9851851851851852,
+        "f1_macro": 0.9851851851851852,
+        "confusion_matrix": [
+          [
+            133,
+            2
+          ],
+          [
+            2,
+            133
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 1.0,
+          "glare": 0.963,
+          "occlusion": 0.96,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 0.9512,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9778,
+          "passport": 0.9778,
+          "snils": 1.0
+        }
+      },
+      "cpu_latency_ms": [
+        20.7,
+        1.5
+      ],
+      "size_mb_fp32": 9.3,
+      "params_total": 2387969,
+      "train_time_s": 983.0,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      },
+      "passes_all": true
+    },
+    "yolov8n_cls": {
+      "display": "YOLOv8n-cls",
+      "regime": "full fine-tune",
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9962962962962963,
+        "precision_bad": 1.0,
+        "recall_bad": 0.9925925925925926,
+        "f1_bad": 0.9962825278810409,
+        "precision_good": 0.9926470588235294,
+        "recall_good": 1.0,
+        "f1_macro": 0.9962962454903359,
+        "confusion_matrix": [
+          [
+            135,
+            0
+          ],
+          [
+            1,
+            134
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 0.9643,
+          "glare": 1.0,
+          "occlusion": 1.0,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9889,
+          "passport": 1.0,
+          "snils": 1.0
+        }
+      },
+      "cpu_latency_ms": [
+        9.5,
+        0.8
+      ],
+      "size_mb_fp32": 5.6,
+      "params_total": 1440850,
+      "train_time_s": 346.4,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      },
+      "passes_all": true
+    },
+    "yolov8s_cls": {
+      "display": "YOLOv8s-cls",
+      "regime": "full fine-tune",
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 1.0,
+        "precision_bad": 1.0,
+        "recall_bad": 1.0,
+        "f1_bad": 1.0,
+        "precision_good": 1.0,
+        "recall_good": 1.0,
+        "f1_macro": 1.0,
+        "confusion_matrix": [
+          [
+            135,
+            0
+          ],
+          [
+            0,
+            135
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 1.0,
+          "glare": 1.0,
+          "occlusion": 1.0,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 1.0,
+          "passport": 1.0,
+          "snils": 1.0
+        }
+      },
+      "cpu_latency_ms": [
+        18.5,
+        2.5
+      ],
+      "size_mb_fp32": 19.5,
+      "params_total": 5083298,
+      "train_time_s": 1033.5,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      },
+      "passes_all": true
+    },
+    "efficientnet_b0": {
+      "display": "EfficientNet-B0",
+      "regime": "frozen",
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9925925925925926,
+        "precision_bad": 1.0,
+        "recall_bad": 0.9851851851851852,
+        "f1_bad": 0.9925373134328358,
+        "precision_good": 0.9854014598540146,
+        "recall_good": 1.0,
+        "f1_macro": 0.9925921861281826,
+        "confusion_matrix": [
+          [
+            135,
+            0
+          ],
+          [
+            2,
+            133
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 1.0,
+          "glare": 0.963,
+          "occlusion": 0.96,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9778,
+          "passport": 1.0,
+          "snils": 1.0
+        }
+      },
+      "cpu_latency_ms": [
+        31.0,
+        7.0
+      ],
+      "size_mb_fp32": 16.2,
+      "params_total": 4171645,
+      "train_time_s": 626.6,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      },
+      "passes_all": true
+    },
+    "mobilenet_v3_small_ft": {
+      "display": "MobileNetV3-Small FT (bonus)",
+      "regime": "frozen + fine-tune last 3 blocks",
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9962962962962963,
+        "precision_bad": 1.0,
+        "recall_bad": 0.9925925925925926,
+        "f1_bad": 0.9962825278810409,
+        "precision_good": 0.9926470588235294,
+        "recall_good": 1.0,
+        "f1_macro": 0.9962962454903359,
+        "confusion_matrix": [
+          [
+            135,
+            0
+          ],
+          [
+            1,
+            134
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 0.9643,
+          "glare": 1.0,
+          "occlusion": 1.0,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 1.0,
+          "passport": 0.9889,
+          "snils": 1.0
+        }
+      },
+      "cpu_latency_ms": [
+        10.7,
+        1.1
+      ],
+      "size_mb_fp32": 3.9,
+      "params_total": 1000993,
+      "train_time_s": 351.2,
+      "acceptance": {
+        "Q1 accuracy >= 0.92": true,
+        "Q2 F1(bad) >= 0.92": true,
+        "Q3 recall(bad) >= 0.93": true,
+        "Q4 precision(bad) >= 0.88": true,
+        "Q5 recall per defect >= 0.85": true,
+        "C1 CPU latency <= 50 ms": true,
+        "C2 size <= 25 MB": true
+      },
+      "passes_all": true
+    }
+  },
+  "mean_recall_per_defect": {
+    "occlusion": 0.9667,
+    "exposure": 0.9762,
+    "glare": 0.9877,
+    "blur": 1.0,
+    "skew": 1.0
+  },
+  "missed_bad_per_defect_all_models": {
+    "occlusion": 5,
+    "exposure": 4,
+    "glare": 2,
+    "blur": 0,
+    "skew": 0
+  }
+}
