@@ -17,6 +17,7 @@ Across four tasks, **six models** were trained and compared under one protocol o
 | 2 | Baseline: MobileNetV3-Small (main) + MobileNetV2 (course reference), frozen backbone | [`task2/`](task2/) | [`README.md`](task2/README.md) |
 | 3 | YOLOv8 classification: nano and small, full fine-tuning, comparison with the baseline | [`task3/`](task3/) | [`README.md`](task3/README.md) |
 | 4 | Third model (EfficientNet-B0), fine-tuning bonus, full comparison, error analysis, decision, presentation | [`task4/`](task4/) | [`README.md`](task4/README.md), [`DECISION_MEMO.md`](task4/DECISION_MEMO.md), [`PRESENTATION.md`](task4/PRESENTATION.md) |
+| Group | Cross-testing: a classmate's YOLOv8n-cls evaluated on my dataset; my model packaged for the classmate | [`group_task/`](group_task/), [`release/`](release/) | [`README.md`](group_task/README.md) |
 
 ## Data and protocol (shared by all tasks)
 
@@ -73,6 +74,24 @@ Following the decision rule fixed in the Task 1 memo:
 
 Full reasoning: [`task4/DECISION_MEMO.md`](task4/DECISION_MEMO.md).
 
+## Group task: a classmate's model on my dataset
+
+I exchanged models with a classmate. My YOLOv8n-cls is packaged in [`release/yolov8n_quality_gate/`](release/yolov8n_quality_gate/) (weights, `predict.py`, instructions). Their YOLOv8n-cls (unchanged, in [`group_task/yolov8n_quality_gate/`](group_task/yolov8n_quality_gate/)) was run with their own script on all **1800** images of my dataset. Their model never saw these images.
+
+| Evaluation | Model | Accuracy | F1 (bad) | Recall (bad) | FN / FP | CPU latency |
+|---|---|---|---|---|---|---|
+| my full dataset (1800) | classmate's YOLOv8n-cls | 0.956 | 0.956 | 0.958 | 38 / 41 | 9.6 ms |
+| my test split (270) | classmate's YOLOv8n-cls | 0.963 | 0.963 | 0.963 | 5 / 5 | 9.6 ms |
+| my test split (270) | my YOLOv8n-cls | **0.996** | **0.996** | **0.993** | **1 / 0** | 9.5 ms |
+
+- Cross-dataset drop: **−3.7 pp** (0.993 on their own validation data → 0.956 on mine). The model passes 6 of 7 acceptance criteria and fails only Q5, because glare recall is 0.806.
+- **Two systematic error groups explain 69 of 79 errors:**
+  - faint white glare on the white INN form is missed (28 / 60);
+  - SNILS cards tilted by more than ~6° are flagged as bad (41 / 84; all 27 above 6.5°), because the classmate trained without rotation augmentation and treats this tilt as skew, while in my labels ±3–8° is good.
+- A different threshold does not help: the errors come from **different good/bad definitions** in the two datasets, not from calibration.
+
+Details, charts and recommendations: [`group_task/README.md`](group_task/README.md).
+
 ## Evaluation guide checklist
 
 | Requirement (Evaluation Guide 06) | Where |
@@ -87,6 +106,7 @@ Full reasoning: [`task4/DECISION_MEMO.md`](task4/DECISION_MEMO.md).
 | Third model, full comparison table (accuracy, precision, recall, F1, latency, size, params, training time), charts, failure gallery, hardest defect, decision memo | [`task4/`](task4/) |
 | 5-minute presentation | [`task4/PRESENTATION.md`](task4/PRESENTATION.md) (slide plan, speaker notes, Q&A) |
 | Bonus: fine-tuning with a lowered learning rate and reported delta | [`task4/README.md`](task4/README.md#5-bonus-fine-tuning-with-a-lowered-learning-rate) |
+| Group task: exchange models with a classmate, test their model on my data, analyse the errors | [`group_task/README.md`](group_task/README.md), [`release/`](release/) |
 
 ## Repository structure
 
@@ -101,8 +121,10 @@ Full reasoning: [`task4/DECISION_MEMO.md`](task4/DECISION_MEMO.md).
 ├── task1/                        model selection memo + CPU benchmark of candidates
 ├── task2/                        MobileNetV3-Small / MobileNetV2 baseline notebook, outputs, README
 ├── task3/                        YOLOv8n/s-cls notebook, dataset builder, Ultralytics runs, outputs, README
-└── task4/                        EfficientNet-B0, fine-tuning bonus, comparison, error analysis,
-                                  DECISION_MEMO.md, PRESENTATION.md, README
+├── task4/                        EfficientNet-B0, fine-tuning bonus, comparison, error analysis,
+│                                 DECISION_MEMO.md, PRESENTATION.md, README
+├── release/yolov8n_quality_gate/ my best model packaged for the classmate (weights, predict.py, README)
+└── group_task/                   classmate's model tested on my dataset: analysis script, outputs, README
 ```
 
 ## How to reproduce
@@ -114,5 +136,7 @@ cd 6_practice/task2 && python -m nbconvert --to notebook --execute --inplace tas
 cd ../task3        && python -m nbconvert --to notebook --execute --inplace task3_yolov8_classification.ipynb
 cd ../task4        && python -m nbconvert --to notebook --execute --inplace task4_full_comparison.ipynb
 ```
+
+Group task (≈ 1 min): `cd 6_practice/group_task && python yolov8n_quality_gate/predict.py --source ../../5_practice/data/quality_dataset --out outputs/peer_predictions_full.csv && python analyze_peer_model.py`.
 
 Total ≈ 70 minutes on the CPU listed above. The Task 3 notebook rebuilds `task3/yolo_dataset/` (not stored in git) from the shared split.

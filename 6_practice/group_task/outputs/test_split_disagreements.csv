@@ -1,0 +1,12 @@
+image_id,true,defect_or_aug,peer_prob_bad,peer_correct,my_prob_bad,my_correct
+bad_inn_glare_027_v3,bad,glare,0.4718,False,1.0,True
+bad_inn_glare_117_v3,bad,glare,0.315,False,0.9998,True
+bad_inn_glare_192_v3,bad,glare,0.1199,False,0.8276,True
+bad_inn_glare_227_v2,bad,glare,0.308,False,0.9823,True
+bad_inn_exposure_265_v1,bad,exposure,0.8476,True,0.3902,False
+good_snils_003_v3,good,slight_rotation_7.3,0.7348,False,0.0003,True
+good_snils_038_v2,good,slight_rotation_6.2,0.673,False,0.0001,True
+good_snils_046_v1,good,slight_rotation_6.6,0.7571,False,0.0002,True
+good_snils_134_v2,good,slight_rotation_6.4,0.6789,False,0.0001,True
+good_snils_139_v1,good,slight_rotation_5.4,0.706,False,0.0001,True
+bad_snils_exposure_140_v2,bad,exposure,0.4517,False,0.9994,True

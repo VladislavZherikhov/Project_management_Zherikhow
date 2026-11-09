@@ -1,0 +1,300 @@
+{
+  "peer_model": {
+    "weights": "yolov8n_quality_gate/yolov8n_quality_gate.pt",
+    "classes": {
+      "0": "bad",
+      "1": "good"
+    },
+    "train_args_from_checkpoint": {
+      "base": "yolov8n-cls.pt",
+      "epochs": 15,
+      "patience": 4,
+      "batch": 16,
+      "imgsz": 224,
+      "optimizer": "Adam",
+      "lr0": 0.0001,
+      "dropout": 0.3,
+      "seed": 2473986,
+      "degrees": 0.0,
+      "fliplr": 0.0,
+      "flipud": 0.0,
+      "hsv_s": 0.7,
+      "hsv_v": 0.4,
+      "scale": 0.5,
+      "device": "GPU (Colab)"
+    },
+    "reported_val_accuracy_on_own_data": 0.99259
+  },
+  "full_dataset_1800": {
+    "metrics": {
+      "threshold": 0.5,
+      "accuracy": 0.9561,
+      "precision_bad": 0.9546,
+      "recall_bad": 0.9578,
+      "f1_bad": 0.9562,
+      "precision_good": 0.9576,
+      "recall_good": 0.9544,
+      "f1_macro": 0.9561,
+      "confusion_matrix": [
+        [
+          859,
+          41
+        ],
+        [
+          38,
+          862
+        ]
+      ]
+    },
+    "breakdown": {
+      "recall_bad_per_defect": {
+        "blur": 1.0,
+        "exposure": 0.9889,
+        "glare": 0.8056,
+        "occlusion": 0.9944,
+        "skew": 1.0
+      },
+      "accuracy_good_per_augmentation": {
+        "none": 1.0,
+        "rotate_270": 1.0,
+        "rotate_90": 1.0,
+        "slight_rotation": 0.8596,
+        "upside_down": 1.0
+      },
+      "accuracy_per_document_class": {
+        "inn": 0.9533,
+        "passport": 0.995,
+        "snils": 0.92
+      }
+    },
+    "acceptance_criteria": {
+      "Q1 accuracy >= 0.92": true,
+      "Q2 F1(bad) >= 0.92": true,
+      "Q3 recall(bad) >= 0.93": true,
+      "Q4 precision(bad) >= 0.88": true,
+      "Q5 recall per defect >= 0.85": false,
+      "C1 CPU latency <= 50 ms": true,
+      "C2 size <= 25 MB": true
+    }
+  },
+  "my_test_split_270": {
+    "peer": {
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.963,
+        "precision_bad": 0.963,
+        "recall_bad": 0.963,
+        "f1_bad": 0.963,
+        "precision_good": 0.963,
+        "recall_good": 0.963,
+        "f1_macro": 0.963,
+        "confusion_matrix": [
+          [
+            130,
+            5
+          ],
+          [
+            5,
+            130
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 0.9643,
+          "glare": 0.8519,
+          "occlusion": 1.0,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 0.878,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9556,
+          "passport": 1.0,
+          "snils": 0.9333
+        }
+      }
+    },
+    "mine_yolov8n_cls": {
+      "metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9963,
+        "precision_bad": 1.0,
+        "recall_bad": 0.9926,
+        "f1_bad": 0.9963,
+        "precision_good": 0.9926,
+        "recall_good": 1.0,
+        "f1_macro": 0.9963,
+        "confusion_matrix": [
+          [
+            135,
+            0
+          ],
+          [
+            1,
+            134
+          ]
+        ]
+      },
+      "breakdown": {
+        "recall_bad_per_defect": {
+          "blur": 1.0,
+          "exposure": 0.9643,
+          "glare": 1.0,
+          "occlusion": 1.0,
+          "skew": 1.0
+        },
+        "accuracy_good_per_augmentation": {
+          "none": 1.0,
+          "rotate_270": 1.0,
+          "rotate_90": 1.0,
+          "slight_rotation": 1.0,
+          "upside_down": 1.0
+        },
+        "accuracy_per_document_class": {
+          "inn": 0.9889,
+          "passport": 1.0,
+          "snils": 1.0
+        }
+      }
+    }
+  },
+  "cost": {
+    "peer": {
+      "latency_ms": 9.6,
+      "latency_std_ms": 1.1,
+      "size_mb_state_dict": 5.6,
+      "file_size_mb": 2.8,
+      "params_m": 1.44
+    },
+    "mine_yolov8n_cls": {
+      "latency_ms_task4_session": 9.5,
+      "size_mb_state_dict": 5.6,
+      "train_time_s": 346.4
+    }
+  },
+  "threshold_sweep_full_dataset_diagnostic": [
+    {
+      "threshold": 0.05,
+      "accuracy": 0.8061,
+      "precision_bad": 0.7206,
+      "recall_bad": 1.0,
+      "f1_bad": 0.8376,
+      "fn": 0,
+      "fp": 349
+    },
+    {
+      "threshold": 0.1,
+      "accuracy": 0.9011,
+      "precision_bad": 0.8361,
+      "recall_bad": 0.9978,
+      "f1_bad": 0.9098,
+      "fn": 2,
+      "fp": 176
+    },
+    {
+      "threshold": 0.2,
+      "accuracy": 0.9239,
+      "precision_bad": 0.8766,
+      "recall_bad": 0.9867,
+      "f1_bad": 0.9284,
+      "fn": 12,
+      "fp": 125
+    },
+    {
+      "threshold": 0.3,
+      "accuracy": 0.935,
+      "precision_bad": 0.8999,
+      "recall_bad": 0.9789,
+      "f1_bad": 0.9377,
+      "fn": 19,
+      "fp": 98
+    },
+    {
+      "threshold": 0.4,
+      "accuracy": 0.9567,
+      "precision_bad": 0.9458,
+      "recall_bad": 0.9689,
+      "f1_bad": 0.9572,
+      "fn": 28,
+      "fp": 50
+    },
+    {
+      "threshold": 0.5,
+      "accuracy": 0.9561,
+      "precision_bad": 0.9546,
+      "recall_bad": 0.9578,
+      "f1_bad": 0.9562,
+      "fn": 38,
+      "fp": 41
+    },
+    {
+      "threshold": 0.6,
+      "accuracy": 0.9528,
+      "precision_bad": 0.9553,
+      "recall_bad": 0.95,
+      "f1_bad": 0.9526,
+      "fn": 45,
+      "fp": 40
+    },
+    {
+      "threshold": 0.7,
+      "accuracy": 0.9517,
+      "precision_bad": 0.9667,
+      "recall_bad": 0.9356,
+      "f1_bad": 0.9509,
+      "fn": 58,
+      "fp": 29
+    },
+    {
+      "threshold": 0.8,
+      "accuracy": 0.95,
+      "precision_bad": 0.9833,
+      "recall_bad": 0.9156,
+      "f1_bad": 0.9482,
+      "fn": 76,
+      "fp": 14
+    },
+    {
+      "threshold": 0.9,
+      "accuracy": 0.9406,
+      "precision_bad": 1.0,
+      "recall_bad": 0.8811,
+      "f1_bad": 0.9368,
+      "fn": 107,
+      "fp": 0
+    }
+  ],
+  "errors_by_document_and_kind": {
+    "snils | good/slight_rotation": 41,
+    "inn | glare": 28,
+    "snils | glare": 4,
+    "passport | glare": 3,
+    "snils | exposure": 2,
+    "snils | occlusion": 1
+  },
+  "false_alarms_slight_rotation_by_angle": {
+    "inn": {
+      "3-5 deg": "0/43",
+      "5-6.5 deg": "0/31",
+      "6.5-8 deg": "0/31"
+    },
+    "passport": {
+      "3-5 deg": "0/54",
+      "5-6.5 deg": "0/25",
+      "6.5-8 deg": "0/24"
+    },
+    "snils": {
+      "3-5 deg": "1/37",
+      "5-6.5 deg": "13/20",
+      "6.5-8 deg": "27/27"
+    }
+  },
+  "n_errors": 79
+}

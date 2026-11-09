@@ -1,0 +1,16 @@
+Images: 1800 | device: cpu | threshold: 0.5 | classes: {0: 'bad', 1: 'good'}
+Saved: C:\Users\Vlad\Desktop\Проект 3 курс\6_practice\group_task\outputs\peer_predictions_full.csv
+
+Labeled images: 1800 | good=900 | bad=900
+Accuracy:            0.9561
+Precision (bad):     0.9546
+Recall (bad):        0.9578
+F1 (bad):            0.9562
+Macro precision:     0.9561
+Macro recall:        0.9561
+Macro F1:            0.9561
+Confusion matrix (rows=true, columns=predicted):
+              pred good  pred bad
+  true good         859        41
+  true bad           38       862
+IMPORTANT: This script only predicts and evaluates. It never trains or modifies the checkpoint.
