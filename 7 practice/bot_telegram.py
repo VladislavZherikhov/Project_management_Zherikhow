@@ -14,9 +14,8 @@ MAX_BYTES = 10 * 1024 * 1024
 
 async def start(update, context):
     await update.effective_message.reply_text(
-        "Пришлите фото или файл JPG/PNG с документом (СНИЛС, ИНН или паспорт). "
-        "Для проверки используйте синтетические примеры. "
-        "Отправьте изображение файлом, чтобы Telegram его не сжал."
+        "Send a photo or a JPG/PNG file of an INN certificate, a passport, or a SNILS card. "
+        "Use a synthetic sample for testing. Send it as a file to preserve the original image."
     )
 
 
