@@ -1,0 +1,114 @@
+{
+  "counts": {
+    "accepted": 3,
+    "rejected": 2,
+    "error": 2
+  },
+  "predictions": [
+    {
+      "file": "bad_blur.jpg",
+      "status": "rejected",
+      "quality": "bad",
+      "quality_confidence": 0.9999996423721313,
+      "document_type": null,
+      "document_type_confidence": null,
+      "reason": "poor_quality",
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 62.208,
+      "timestamp": "2026-11-22T09:44:36.290381+00:00"
+    },
+    {
+      "file": "bad_glare.jpg",
+      "status": "rejected",
+      "quality": "bad",
+      "quality_confidence": 0.9999978542327881,
+      "document_type": null,
+      "document_type_confidence": null,
+      "reason": "poor_quality",
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 248.344,
+      "timestamp": "2026-11-22T09:44:36.352710+00:00"
+    },
+    {
+      "file": "corrupt.jpg",
+      "status": "error",
+      "quality": null,
+      "quality_confidence": null,
+      "document_type": null,
+      "document_type_confidence": null,
+      "reason": "unsupported_file",
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 0.249,
+      "timestamp": "2026-11-22T09:44:36.601194+00:00"
+    },
+    {
+      "file": "good_inn.jpg",
+      "status": "accepted",
+      "quality": "good",
+      "quality_confidence": 0.9837237298488617,
+      "document_type": "INN",
+      "document_type_confidence": 0.9909331770311011,
+      "reason": null,
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 22.058,
+      "timestamp": "2026-11-22T09:44:36.601497+00:00"
+    },
+    {
+      "file": "good_passport.jpg",
+      "status": "accepted",
+      "quality": "good",
+      "quality_confidence": 0.9994917318690568,
+      "document_type": "PASSPORT",
+      "document_type_confidence": 0.9985045255010456,
+      "reason": null,
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 23.654,
+      "timestamp": "2026-11-22T09:44:36.624024+00:00"
+    },
+    {
+      "file": "good_snils.jpg",
+      "status": "accepted",
+      "quality": "good",
+      "quality_confidence": 0.9998775559943169,
+      "document_type": "SNILS",
+      "document_type_confidence": 0.9973393730193753,
+      "reason": null,
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 21.593,
+      "timestamp": "2026-11-22T09:44:36.648040+00:00"
+    },
+    {
+      "file": "renamed_text.jpg",
+      "status": "error",
+      "quality": null,
+      "quality_confidence": null,
+      "document_type": null,
+      "document_type_confidence": null,
+      "reason": "unsupported_file",
+      "model_versions": {
+        "quality": "yolov8n-cls-practice6",
+        "doctype": "hog-logreg-v1"
+      },
+      "latency_ms": 7209.082,
+      "timestamp": "2026-11-22T09:44:36.669778+00:00"
+    }
+  ]
+}

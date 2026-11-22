@@ -1,0 +1,5 @@
+quality_model: models/yolov8n_quality_gate.pt
+doctype_model: models/doctype.joblib
+quality_version: yolov8n-cls-practice6
+doctype_version: hog-logreg-v1
+bad_threshold: 0.5

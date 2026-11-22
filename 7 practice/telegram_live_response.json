@@ -1,0 +1,15 @@
+{
+  "file": "telegram-photo.jpg",
+  "status": "accepted",
+  "quality": "good",
+  "quality_confidence": 0.9682036377489567,
+  "document_type": "INN",
+  "document_type_confidence": 0.990338647904994,
+  "reason": null,
+  "model_versions": {
+    "quality": "yolov8n-cls-practice6",
+    "doctype": "hog-logreg-v1"
+  },
+  "latency_ms": 214.675,
+  "timestamp": "2026-11-22T09:47:17.736928+00:00"
+}

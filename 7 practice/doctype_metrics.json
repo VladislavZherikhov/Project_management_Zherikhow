@@ -1,0 +1,184 @@
+{
+  "classes": [
+    "INN",
+    "PASSPORT",
+    "SNILS"
+  ],
+  "splits": {
+    "train": {
+      "counts": {
+        "INN": 210,
+        "PASSPORT": 210,
+        "SNILS": 210
+      },
+      "accuracy": 1.0,
+      "classification_report": {
+        "INN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 210.0
+        },
+        "PASSPORT": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 210.0
+        },
+        "SNILS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 210.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 630.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 630.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          210,
+          0,
+          0
+        ],
+        [
+          0,
+          210,
+          0
+        ],
+        [
+          0,
+          0,
+          210
+        ]
+      ]
+    },
+    "validation": {
+      "counts": {
+        "INN": 45,
+        "PASSPORT": 45,
+        "SNILS": 45
+      },
+      "accuracy": 1.0,
+      "classification_report": {
+        "INN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 45.0
+        },
+        "PASSPORT": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 45.0
+        },
+        "SNILS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 45.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 135.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 135.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          45,
+          0,
+          0
+        ],
+        [
+          0,
+          45,
+          0
+        ],
+        [
+          0,
+          0,
+          45
+        ]
+      ]
+    },
+    "test": {
+      "counts": {
+        "INN": 45,
+        "PASSPORT": 45,
+        "SNILS": 45
+      },
+      "accuracy": 1.0,
+      "classification_report": {
+        "INN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 45.0
+        },
+        "PASSPORT": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 45.0
+        },
+        "SNILS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 45.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 135.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 135.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          45,
+          0,
+          0
+        ],
+        [
+          0,
+          45,
+          0
+        ],
+        [
+          0,
+          0,
+          45
+        ]
+      ]
+    }
+  },
+  "test_latency_ms_mean": 4.324
+}
